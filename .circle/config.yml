@@ -43,6 +43,6 @@ jobs:
       override:
         - vendor/bin/phpunit
 
-#dependencies:
-#  override:
-#    - composer install --prefer-source --no-interaction --no-dev
+    dependencies:
+      override:
+        - composer install --prefer-source --no-interaction --no-dev
