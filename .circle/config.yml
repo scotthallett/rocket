@@ -27,7 +27,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: composer install -n --prefer-dist
+      #- run: composer install -n --prefer-dist
+      - run: composer install -n --prefer-source
 
       - save_cache:
           paths:
@@ -41,6 +42,6 @@ test:
   override:
    - vendor/bin/phpunit
 
-dependencies:
-  override:
-    - composer install --prefer-source --no-interaction --no-dev
+#dependencies:
+#  override:
+#    - composer install --prefer-source --no-interaction --no-dev
