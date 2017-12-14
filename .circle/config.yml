@@ -28,7 +28,8 @@ jobs:
           - v1-dependencies-
 
       #- run: composer install -n --prefer-dist
-      - run: composer install -n --prefer-source
+      #- run: composer install -n --prefer-source
+      - run: composer install --prefer-source --no-interaction --no-dev
 
       - save_cache:
           paths:
@@ -38,9 +39,9 @@ jobs:
       # run tests!
       - run: vendor/bin/phpunit
 
-#test:
-#  override:
-#   - vendor/bin/phpunit
+    test:
+      override:
+        - vendor/bin/phpunit
 
 #dependencies:
 #  override:
